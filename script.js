@@ -172,3 +172,4 @@
                 displayLogos(expertiseBtns[0].textContent.trim());
             }
         });
+   

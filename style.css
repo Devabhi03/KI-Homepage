@@ -48,7 +48,7 @@
         .navbar-nav { list-style: none; display: flex; align-items: center; gap: 30px; }
         .navbar-nav a { color: var(--text-color); font-weight: 500; transition: color 0.3s; }
         .navbar-nav a:hover { color: var(--primary-color); }
-        .lets-talk-btn { background-color: var(--primary-color); color: var(--white); padding: 10px 25px; border-radius: 8px; font-weight: 500; transition: background-color 0.3s; }
+        .lets-talk-btn { background-color: var(--primary-color); color: var(--white); padding: 16px 32px; border-radius: 8px; font-weight: 500; transition: background-color 0.3s; }
         .lets-talk-btn:hover { background-color: var(--primary-dark); color: var(--white); }
         
         /* -- Responsive Header Styles -- */
@@ -347,6 +347,41 @@
 
         /* --- MOBILE RESPONSIVE STYLES --- */
         @media (max-width: 767px) {
+            .navbar-toggler {
+                display: block;
+            }
+            .header_menu {
+                display: none;
+                position: fixed;
+                top: 72px; /* Adjust based on header height */
+                left: 0;
+                width: 100%;
+                height: calc(100% - 72px);
+                background-color: var(--white);
+                flex-direction: column;
+                justify-content: center;
+                align-items: center;
+            }
+            .header_menu.active {
+                display: flex;
+            }
+            .navbar-nav {
+                flex-direction: column;
+                gap: 40px;
+            }
+            .navbar-nav .lets-talk-btn {
+                padding: 10px 25px; /* Smaller padding for mobile menu */
+            }
+
+            .ki-why-we-standout-section-new {
+                align-items: flex-start;
+                flex-direction: column;
+            }
+            .ki-wwso-features {
+                flex-direction: column;
+                width: 100%;
+            }
+
             h2, .heading2-ele { font-size: 1.8rem; }
             
             .ki-home-banner-background {
