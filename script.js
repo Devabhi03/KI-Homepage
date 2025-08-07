@@ -10,16 +10,16 @@
 
             const awardSets = [
                 { // Set 1: Based on "Clutch/Goodfirms" image
-                    cell1: `<img src="Images/Clutch.webp" alt="Clutch Logo"><span class="award-title">Top B2B</span><span class="award-description">Providers in the Indian Emerging Tech Market for 2021</span>`,
-                    cell2: `<img src="Images/GoodFirms.webp" alt="GoodFirms Logo"><span class="award-title">Top Shopify</span><span class="award-description">Development Companies in 2019</span>`,
-                    cell3: `<img src="Images/Microsoft Solution Partner.webp" alt="Microsoft Logo"><span class="award-title">Solutions Partner</span><span class="award-description">Microsoft Cloud</span>`,
-                    cell4: `<img src="Images/Clutch.webp" alt="Clutch Logo"><span class="award-title">Top 12</span><span class="award-description">out of 400 top Mobile App Developers in India, 2020</span>`
+                    cell1: `<img src="Images/Clutch.webp" alt="Clutch Logo" width="80" height="22"><span class="award-title">Top B2B</span><span class="award-description">Providers in the Indian Emerging Tech Market for 2021</span>`,
+                    cell2: `<img src="Images/GoodFirms.webp" alt="GoodFirms Logo" width="80" height="22"><span class="award-title">Top Shopify</span><span class="award-description">Development Companies in 2019</span>`,
+                    cell3: `<img src="Images/Microsoft Solution Partner.webp" alt="Microsoft Logo" width="80" height="22"><span class="award-title">Solutions Partner</span><span class="award-description">Microsoft Cloud</span>`,
+                    cell4: `<img src="Images/Clutch.webp" alt="Clutch Logo" width="80" height="22"><span class="award-title">Top 12</span><span class="award-description">out of 400 top Mobile App Developers in India, 2020</span>`
                 },
                 { // Set 2: Based on "CrowdReviews" image
-                    cell1: `<img src="Images/Clutch.webp" alt="CrowdReviews Logo"><span class="award-title">#1 ASP.NET</span><span class="award-description">Development Company</span>`,
-                    cell2: `<img src="Images/Clutch.webp" alt="CrowdReviews Logo"><span class="award-title">Top 10</span><span class="award-description">Web Development Company</span>`,
-                    cell3: `<img src="Images/Microsoft Solution Partner.webp" alt="CrowdReviews Logo"><span class="award-title">Top 3</span><span class="award-description">E-Commerce Development Company</span>`,
-                    cell4: `<img src="Images/Clutch.webp" alt="Clutch Logo"><span class="award-title">Top 1000</span><span class="award-description">B2B Companies 2018</span>`
+                    cell1: `<img src="Images/Clutch.webp" alt="CrowdReviews Logo" width="80" height="22"><span class="award-title">#1 ASP.NET</span><span class="award-description">Development Company</span>`,
+                    cell2: `<img src="Images/Clutch.webp" alt="CrowdReviews Logo" width="80" height="22"><span class="award-title">Top 10</span><span class="award-description">Web Development Company</span>`,
+                    cell3: `<img src="Images/Microsoft Solution Partner.webp" alt="CrowdReviews Logo" width="80" height="22"><span class="award-title">Top 3</span><span class="award-description">E-Commerce Development Company</span>`,
+                    cell4: `<img src="Images/Clutch.webp" alt="Clutch Logo" width="80" height="22"><span class="award-title">Top 1000</span><span class="award-description">B2B Companies 2018</span>`
                 }
             ];
             
@@ -51,6 +51,17 @@
                 setInterval(updateAwards, 5000); 
             }
 
+            // --- Mobile Menu Toggle ---
+            const toggler = document.querySelector('.navbar-toggler');
+            const menu = document.getElementById('mobileMenu');
+            if (toggler && menu) {
+                toggler.addEventListener('click', () => {
+                    menu.classList.toggle('active');
+                    toggler.classList.toggle('active');
+                    const isExpanded = toggler.getAttribute('aria-expanded') === 'true';
+                    toggler.setAttribute('aria-expanded', !isExpanded);
+                });
+            }
 
             // --- Services Tab Script ---
             const tabs = document.querySelectorAll('.sc-tabs-ele');

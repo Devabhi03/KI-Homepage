@@ -3,6 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Keyideas offers expert IT consulting and software development services. We specialize in creating custom web and mobile solutions to drive success for your business.">
     <title>Premium IT Consulting Services & Software Experts</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -10,23 +11,29 @@
     <link rel="stylesheet" href="style.css">
     
 
+
 </head>
 <body class="page">
     <header class="main__header">
         <div class="container">
             <nav class="navbar">
                 <a class="navbar-brand" href="#">
-                    <img src="Images/Keyideas Logo.webp" alt="Keyideas Logo">
+                    <img src="Images/Keyideas Logo.webp" alt="Keyideas company logo" width="172" height="48">
                 </a>
-                <div class="header_menu">
+                <div class="header_menu" id="mobileMenu">
                     <ul class="navbar-nav">
                         <li><a href="#">Company ▼</a></li>
                         <li><a href="#">Case Studies ▼</a></li>
                         <li><a href="#">Industries ▼</a></li>
                         <li><a href="#">We're Hiring</a></li>
+                        <li><a class="lets-talk-btn" href="#">Let's Talk</a></li>
                     </ul>
                 </div>
-                <a class="lets-talk-btn" href="#">Let's Talk</a>
+                <button class="navbar-toggler" type="button" aria-label="Toggle navigation" aria-expanded="false">
+                    <span class="toggler-icon"></span>
+                    <span class="toggler-icon"></span>
+                    <span class="toggler-icon"></span>
+                </button>
             </nav>
         </div>
     </header>
@@ -36,7 +43,8 @@
             <div class="ki-home-banner-background">
                 <div class="container hs-container">
                     <div class="ki-home-banner-text">
-                        <h1>Driving Success Through Expert IT Consulting Services</h1>
+                        <h1 class="desktop-heading">Driving Success Through Expert IT Consulting Services</h1>
+                        <h1 class="mobile-heading">Best Design and Development Company</h1>
                         <p>Agility, Ingenuity, Reliability: Powering Progress.</p>
                     </div>
                 </div>
@@ -64,9 +72,7 @@
 
         <section class="blog-article-sc">
             <div class="container">
-                <div class="tech-stack-text">
-                    <div class="heading2-ele">Comprehensive IT Consulting Services for all Business Needs</div>
-                </div>
+                <h2 class="heading2-ele">Comprehensive IT Consulting Services for all Business Needs</h2>
                 <div class="scservice-wrapper">
                     <div class="sc-services-tabs">
                         <div class="sc-tabs-ele active"><p>Software Product Engineering</p></div>
@@ -153,25 +159,33 @@
             <div class="container">
                 <h2 class="text-center">Experiences Crafted by our Software Experts</h2>
                 <div class="work-wrapper-1">
-                    <div class="work-block-container" style="position:relative;">
-                        <img src="Images/Experiences Crafted by our Software Experts/Healthcare Research Solution.webp" alt="Healthcare Research Solution" style="position:absolute;top:0;left:0;width:100%;height:100%;object-fit:cover;z-index:0;">
-                        <div class="work-title" style="position:absolute;top:20px;left:20px;z-index:1;">Healthcare Research Solution</div>
-                        <p style="position:absolute;top:60px;left:20px;z-index:1;">User-friendly health based applications for clinical trial management, streamlining data access and collaboration.</p>
+                    <div class="work-block-container">
+                        <img class="work-block-image" src="Images/Experiences Crafted by our Software Experts/Healthcare Research Solution.webp" alt="Two scientists collaborating in a lab" width="600" height="400" loading="lazy">
+                        <div class="work-block-text">
+                           <div class="work-title">Healthcare Research Solution</div>
+                           <p class="work-description">User-friendly health based applications for clinical trial management, streamlining data access and collaboration.</p>
+                        </div>
                     </div>
-                    <div class="work-block-container" style="position:relative;">
-                        <img src="Images/Experiences Crafted by our Software Experts/Advance Jewelry Solution.webp" alt="Advanced Jewelry Solutions" style="position:absolute;top:0;left:0;width:100%;height:100%;object-fit:cover;z-index:0;">
-                        <div class="work-title" style="position:absolute;top:20px;left:20px;z-index:1;">Advanced Jewelry Solutions</div>
-                        <p style="position:absolute;top:60px;left:20px;z-index:1;">Explore innovative solutions featuring custom designs, certified quality, and enhanced shopping experiences.</p>
+                    <div class="work-block-container">
+                        <img class="work-block-image" src="Images/Experiences Crafted by our Software Experts/Advance Jewelry Solution.webp" alt="Close-up of a diamond ring on a person's hand" width="600" height="400" loading="lazy">
+                        <div class="work-block-text">
+                           <div class="work-title">Advanced Jewelry Solutions</div>
+                           <p class="work-description">Explore innovative solutions featuring custom designs, certified quality, and enhanced shopping experiences.</p>
+                        </div>
                     </div>
-                    <div class="work-block-container" style="position:relative;">
-                        <img src="Images/Experiences Crafted by our Software Experts/Travel & Hospitality.webp" alt="Travel & Hospitality" style="position:absolute;top:0;left:0;width:100%;height:100%;object-fit:cover;z-index:0;">
-                        <div class="work-title" style="position:absolute;top:20px;left:20px;z-index:1;">Travel & Hospitality</div>
-                        <p style="position:absolute;top:60px;left:20px;z-index:1;">Platforms that simplifies tour planning, makes bookings easier and enhances trip experiences.</p>
+                    <div class="work-block-container">
+                        <img class="work-block-image" src="Images/Experiences Crafted by our Software Experts/Travel & Hospitality.webp" alt="Waiter serving drinks to a happy couple in a restaurant" width="600" height="400" loading="lazy">
+                        <div class="work-block-text">
+                           <div class="work-title">Travel & Hospitality</div>
+                           <p class="work-description">Platforms that simplifies tour planning, makes bookings easier and enhances trip experiences.</p>
+                        </div>
                     </div>
-                    <div class="work-block-container" style="position:relative;">
-                        <img src="Images/Experiences Crafted by our Software Experts/Enterprise Software.webp" alt="Enterprise Software" style="position:absolute;top:0;left:0;width:100%;height:100%;object-fit:cover;z-index:0;">
-                        <div class="work-title" style="position:absolute;top:20px;left:20px;z-index:1;">Enterprise Software</div>
-                        <p style="position:absolute;top:60px;left:20px;z-index:1;">Powerful tools designed to integrate processes, boost productivity, and scale your business seamlessly.</p>
+                    <div class="work-block-container">
+                        <img class="work-block-image" src="Images/Experiences Crafted by our Software Experts/Enterprise Software.webp" alt="Warehouse shelves stacked high with boxes" width="600" height="400" loading="lazy">
+                        <div class="work-block-text">
+                           <div class="work-title">Enterprise Software</div>
+                           <p class="work-description">Powerful tools designed to integrate processes, boost productivity, and scale your business seamlessly.</p>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -182,24 +196,32 @@
                 <h2 class="text-center">Success Stories Powered by our IT Consulting Expertise</h2>
                 <div class="work-wrapper-3">
                     <div class="work-block-container">
-                        <img src="Images/Success Stories Powered by our IT Consulting Services/Real Estate & Property Management.webp" alt="Real Estate & Property Management" style="position:absolute;top:0;left:0;width:100%;height:100%;object-fit:cover;z-index:0;">
-                        <div class="work-title" style="position:absolute;top:20px;left:20px;z-index:1;">Real Estate & Property Management</div>
-                        <p style="position:absolute;top:60px;left:20px;z-index:1;">Efficient solutions for property listings, tenant management, and smooth projects operations.</p>
+                        <img class="work-block-image" src="Images/Success Stories Powered by our IT Consulting Services/Real Estate & Property Management.webp" alt="A modern two-story house at dusk" width="600" height="400" loading="lazy">
+                        <div class="work-block-text">
+                           <div class="work-title">Real Estate & Property Management</div>
+                           <p class="work-description">Efficient solutions for property listings, tenant management, and smooth projects operations.</p>
+                        </div>
                     </div>
-                    <div class="work-block-container" style="position:relative;">
-                        <img src="Images/Success Stories Powered by our IT Consulting Services/E-Commerce Platforms.webp" alt="E-Commerce Platforms" style="position:absolute;top:0;left:0;width:100%;height:100%;object-fit:cover;z-index:0;">
-                        <div class="work-title" style="position:absolute;top:20px;left:20px;z-index:1;">E-Commerce Platforms</div>
-                        <p style="position:absolute;top:60px;left:20px;z-index:1;">Platforms with diverse products, easy payments, and faster delivery.</p>
+                    <div class="work-block-container">
+                        <img class="work-block-image" src="Images/Success Stories Powered by our IT Consulting Services/E-Commerce Platforms.webp" alt="Racks of colorful clothing in a retail store" width="600" height="400" loading="lazy">
+                        <div class="work-block-text">
+                           <div class="work-title">E-Commerce Platforms</div>
+                           <p class="work-description">Platforms with diverse products, easy payments, and faster delivery.</p>
+                        </div>
                     </div>
-                    <div class="work-block-container" style="position:relative;">
-                        <img src="Images/Success Stories Powered by our IT Consulting Services/Finance & Fintech Solutions.webp" alt="Finance & Fintech Solutions" style="position:absolute;top:0;left:0;width:100%;height:100%;object-fit:cover;z-index:0;">
-                        <div class="work-title" style="position:absolute;top:20px;left:20px;z-index:1;">Finance & Fintech Solutions</div>
-                        <p style="position:absolute;top:60px;left:20px;z-index:1;">Innovative tools designed to simplify financial management, enhance transactions, and drive growth in the digital economy.</p>
+                    <div class="work-block-container">
+                        <img class="work-block-image" src="Images/Success Stories Powered by our IT Consulting Services/Finance & Fintech Solutions.webp" alt="Two people reviewing financial documents with a phone and laptop" width="600" height="400" loading="lazy">
+                        <div class="work-block-text">
+                           <div class="work-title">Finance & Fintech Solutions</div>
+                           <p class="work-description">Innovative tools designed to simplify financial management, enhance transactions, and drive growth in the digital economy.</p>
+                        </div>
                     </div>
-                    <div class="work-block-container" style="position:relative;">
-                        <img src="Images/Success Stories Powered by our IT Consulting Services/Contractor & Home Services.webp" alt="Contractor & Home Services" style="position:absolute;top:0;left:0;width:100%;height:100%;object-fit:cover;z-index:0;">
-                        <div class="work-title" style="position:absolute;top:20px;left:20px;z-index:1;">Contractor & Home Services</div>
-                        <p style="position:absolute;top:60px;left:20px;z-index:1;">Reliable solutions for professional contracting, home maintenance, and remodeling needs.</p>
+                    <div class="work-block-container">
+                        <img class="work-block-image" src="Images/Success Stories Powered by our IT Consulting Services/Contractor & Home Services.webp" alt="Construction worker reviewing blueprints on a job site" width="600" height="400" loading="lazy">
+                        <div class="work-block-text">
+                           <div class="work-title">Contractor & Home Services</div>
+                           <p class="work-description">Reliable solutions for professional contracting, home maintenance, and remodeling needs.</p>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -228,22 +250,22 @@
         <section class="industry-sc">
             <div class="container">
                 <div class="tech-stack-text">
-                    <div class="heading2-ele">Tailored Solutions for Leading Sectors</div>
+                    <h2 class="heading2-ele">Tailored Solutions for Leading Sectors</h2>
                     <p>At Keyideas, we create innovative products to solve business problems. Our tailored web solutions cater to the distinct requirements of our industrial clients.</p>
                 </div>
                 <div class="sc-box-wrapper">
-                    <div class="sc-link-box"><a href="#"><img src="Images/Tailored Solutions for Leading Sectors/Events And Conference.webp" alt="Icon"><span>Events and Conference</span></a></div>
-                    <div class="sc-link-box"><a href="#"><img src="Images/Tailored Solutions for Leading Sectors/Fashion And Accesories.webp" alt="Icon"><span>Fashion and Accessories</span></a></div>
-                    <div class="sc-link-box"><a href="#"><img src="Images/Tailored Solutions for Leading Sectors/jewelry-website.webp" alt="Icon"><span>Jewelry Website</span></a></div>
-                    <div class="sc-link-box"><a href="#"><img src="Images/Tailored Solutions for Leading Sectors/warehouse-management.webp" alt="Icon"><span>Warehouse Management</span></a></div>
-                    <div class="sc-link-box"><a href="#"><img src="Images/Tailored Solutions for Leading Sectors/automotive-and-transportation.webp" alt="Icon"><span>Automotive and Transportation</span></a></div>
-                    <div class="sc-link-box"><a href="#"><img src="Images/Tailored Solutions for Leading Sectors/EDUCATION.webp" alt="Icon"><span>Education</span></a></div>
-                    <div class="sc-link-box"><a href="#"><img src="Images/Tailored Solutions for Leading Sectors/Finance.webp" alt="Icon"><span>Finance</span></a></div>
-                    <div class="sc-link-box"><a href="#"><img src="Images/Tailored Solutions for Leading Sectors/Food And Beverages.webp" alt="Icon"><span>Food and Beverages</span></a></div>
-                     <div class="sc-link-box"><a href="#"><img src="Images/Tailored Solutions for Leading Sectors/Health And Medical.webp" alt="Icon"><span>Health and Medical</span></a></div>
-                    <div class="sc-link-box"><a href="#"><img src="Images/Tailored Solutions for Leading Sectors/heavy-equipments.webp" alt="Icon"><span>Heavy Equipments</span></a></div>
-                    <div class="sc-link-box"><a href="#"><img src="Images/Tailored Solutions for Leading Sectors/home-and-repair.webp" alt="Icon"><span>Home and Repair</span></a></div>
-                    <div class="sc-link-box"><a href="#"><img src="Images/Tailored Solutions for Leading Sectors/industrial.webp" alt="Icon"><span>Industrial</span></a></div>
+                    <div class="sc-link-box"><a href="#"><img src="Images/Tailored Solutions for Leading Sectors/Events And Conference.webp" alt="People in a business conference" width="50" height="50" loading="lazy"><span>Events and Conference</span></a></div>
+                    <div class="sc-link-box"><a href="#"><img src="Images/Tailored Solutions for Leading Sectors/Fashion And Accesories.webp" alt="Model walking on a runway" width="50" height="50" loading="lazy"><span>Fashion and Accessories</span></a></div>
+                    <div class="sc-link-box"><a href="#"><img src="Images/Tailored Solutions for Leading Sectors/jewelry-website.webp" alt="Woman wearing elegant jewelry" width="50" height="50" loading="lazy"><span>Jewelry Website</span></a></div>
+                    <div class="sc-link-box"><a href="#"><img src="Images/Tailored Solutions for Leading Sectors/warehouse-management.webp" alt="Forklift in a warehouse" width="50" height="50" loading="lazy"><span>Warehouse Management</span></a></div>
+                    <div class="sc-link-box"><a href="#"><img src="Images/Tailored Solutions for Leading Sectors/automotive-and-transportation.webp" alt="Two modern cars in a parking garage" width="50" height="50" loading="lazy"><span>Automotive and Transportation</span></a></div>
+                    <div class="sc-link-box"><a href="#"><img src="Images/Tailored Solutions for Leading Sectors/EDUCATION.webp" alt="Smiling graduate in cap and gown" width="50" height="50" loading="lazy"><span>Education</span></a></div>
+                    <div class="sc-link-box"><a href="#"><img src="Images/Tailored Solutions for Leading Sectors/Finance.webp" alt="Stock market charts on a laptop and phone" width="50" height="50" loading="lazy"><span>Finance</span></a></div>
+                    <div class="sc-link-box"><a href="#"><img src="Images/Tailored Solutions for Leading Sectors/Food And Beverages.webp" alt="Stack of pancakes with blueberries" width="50" height="50" loading="lazy"><span>Food and Beverages</span></a></div>
+                     <div class="sc-link-box"><a href="#"><img src="Images/Tailored Solutions for Leading Sectors/Health And Medical.webp" alt="Team of doctors and nurses" width="50" height="50" loading="lazy"><span>Health and Medical</span></a></div>
+                    <div class="sc-link-box"><a href="#"><img src="Images/Tailored Solutions for Leading Sectors/heavy-equipments.webp" alt="Loader moving dirt into a truck" width="50" height="50" loading="lazy"><span>Heavy Equipments</span></a></div>
+                    <div class="sc-link-box"><a href="#"><img src="Images/Tailored Solutions for Leading Sectors/home-and-repair.webp" alt="Modern living room interior" width="50" height="50" loading="lazy"><span>Home and Repair</span></a></div>
+                    <div class="sc-link-box"><a href="#"><img src="Images/Tailored Solutions for Leading Sectors/industrial.webp" alt="Worker guiding a large piece of machinery" width="50" height="50" loading="lazy"><span>Industrial</span></a></div>
                     
                     <div class="ki-why-we-standout-section-new">
                         <div class="ki-wwso-first-new">Why We<br>Stand Out?</div>
@@ -271,16 +293,16 @@
                             </div>
                         </div>
                     </div>
-                    <div class="sc-link-box"><a href="#"><img src="Images/Tailored Solutions for Leading Sectors/insurance.webp" alt="Icon"><span>Insurance</span></a></div>
-                    <div class="sc-link-box"><a href="#"><img src="Images/Tailored Solutions for Leading Sectors/legal.webp" alt="Icon"><span>Legal</span></a></div>
+                    <div class="sc-link-box"><a href="#"><img src="Images/Tailored Solutions for Leading Sectors/insurance.webp" alt="Insurance form being filled out" width="50" height="50" loading="lazy"><span>Insurance</span></a></div>
+                    <div class="sc-link-box"><a href="#"><img src="Images/Tailored Solutions for Leading Sectors/legal.webp" alt="Lawyer signing a document with a gavel nearby" width="50" height="50" loading="lazy"><span>Legal</span></a></div>
                     
-                    <div class="sc-link-box"><a href="#"><img src="Images/Tailored Solutions for Leading Sectors/local-services.webp" alt="Icon"><span>Local Services</span></a></div>
-                    <div class="sc-link-box"><a href="#"><img src="Images/Tailored Solutions for Leading Sectors/real-estate.webp" alt="Icon"><span>Real Estate</span></a></div>
-                    <div class="sc-link-box"><a href="#"><img src="Images/Tailored Solutions for Leading Sectors/recreation-and-entertainment.webp" alt="Icon"><span>Recreation and Entertainment</span></a></div>
-                     <div class="sc-link-box"><a href="#"><img src="Images/Tailored Solutions for Leading Sectors/retail-and-ecommerce.webp" alt="Icon"><span>Retail and E-Commerce</span></a></div>
-                    <div class="sc-link-box"><a href="#"><img src="Images/Tailored Solutions for Leading Sectors/tech.webp" alt="Icon"><span>Tech</span></a></div>
-                    <div class="sc-link-box"><a href="#"><img src="Images/Tailored Solutions for Leading Sectors/tourism-and-hospitality.webp" alt="Icon"><span>Tourism and Hospitality</span></a></div>
-                    <div class="sc-link-box"><a href="#"><img src="Images/Tailored Solutions for Leading Sectors/professional-services.webp" alt="Icon"><span>Professional Services</span></a></div>
+                    <div class="sc-link-box"><a href="#"><img src="Images/Tailored Solutions for Leading Sectors/local-services.webp" alt="Baristas working at a coffee shop" width="50" height="50" loading="lazy"><span>Local Services</span></a></div>
+                    <div class="sc-link-box"><a href="#"><img src="Images/Tailored Solutions for Leading Sectors/real-estate.webp" alt="A modern suburban house at sunset" width="50" height="50" loading="lazy"><span>Real Estate</span></a></div>
+                    <div class="sc-link-box"><a href="#"><img src="Images/Tailored Solutions for Leading Sectors/recreation-and-entertainment.webp" alt="Ferris wheel lit up at night" width="50" height="50" loading="lazy"><span>Recreation and Entertainment</span></a></div>
+                     <div class="sc-link-box"><a href="#"><img src="Images/Tailored Solutions for Leading Sectors/retail-and-ecommerce.webp" alt="Interior of a clothing boutique" width="50" height="50" loading="lazy"><span>Retail and E-Commerce</span></a></div>
+                    <div class="sc-link-box"><a href="#"><img src="Images/Tailored Solutions for Leading Sectors/tech.webp" alt="Man working on a laptop with a digital globe interface" width="50" height="50" loading="lazy"><span>Tech</span></a></div>
+                    <div class="sc-link-box"><a href="#"><img src="Images/Tailored Solutions for Leading Sectors/tourism-and-hospitality.webp" alt="Overwater bungalows in a tropical location" width="50" height="50" loading="lazy"><span>Tourism and Hospitality</span></a></div>
+                    <div class="sc-link-box"><a href="#"><img src="Images/Tailored Solutions for Leading Sectors/professional-services.webp" alt="Two businessmen shaking hands in an office" width="50" height="50" loading="lazy"><span>Professional Services</span></a></div>
                </div>
             </div>
         </section>
@@ -288,7 +310,7 @@
         <section>
             <div class="container">
                 <div class="tech-stack-text">
-                    <div class="heading2-ele">Wide Range of Expertise</div>
+                    <h2 class="heading2-ele">Wide Range of Expertise</h2>
                     <p>Our strength lies in our wide range of expertise across numerous cutting-edge technologies. This comprehensive knowledge enables us to craft stunning and functional websites that not only meet your specific requirements but also exceed your expectations.</p>
                 </div>
                 <div class="expertise-wrapper">
@@ -309,10 +331,8 @@
 
         <section class="efficient-processes-section">
             <div class="container">
-                <div class="ki-home-ci-heading text-md-center">
-                    <h2>Efficient Processes Tailored for IT Consulting Services</h2>
-                    <p>Maximizing digital product potential through data-driven insights and user-centric design for memorable user interactions led by software experts.</p>
-                </div>
+                <h2 class="ki-home-ci-heading text-md-center">Efficient Processes Tailored for IT Consulting Services</h2>
+                <p class="text-center" style="max-width:800px; margin: 0 auto 40px auto;">Maximizing digital product potential through data-driven insights and user-centric design for memorable user interactions led by software experts.</p>
         
                 <div class="process-flow">
                     <div class="process-flow__column">
@@ -393,12 +413,12 @@
                     <h2 class="text-md-center">Social Impact: Making a Difference through Corporate Responsibility</h2>
                     <div class="avatar-wrapper">
                         <div class="avatars">
-                            <span class="avatar"><img loading="lazy" src="Images/Social Impact Making a Difference through Corporate Responsibility/best-web-design-company-social-impact.webp" /></span>
-                            <span class="avatar"><img loading="lazy" src="Images/Social Impact Making a Difference through Corporate Responsibility/top-web-design-company-social-impact.webp" /></span>
-                            <span class="avatar"><img loading="lazy" src="Images/Social Impact Making a Difference through Corporate Responsibility/web-design-agency-social-impact.webp" /></span>
-                            <span class="avatar"><img loading="lazy" src="Images/Social Impact Making a Difference through Corporate Responsibility/web-design-company-social-impact.webp" /></span>
-                            <span class="avatar"><img loading="lazy" src="Images/Social Impact Making a Difference through Corporate Responsibility/web-development-company-social-impact.webp" /></span>
-                            <span class="avatar"><img loading="lazy" src="Images/Social Impact Making a Difference through Corporate Responsibility/website-design-company-social-impact.webp" /></span>
+                            <span class="avatar"><img loading="lazy" src="Images/Social Impact Making a Difference through Corporate Responsibility/best-web-design-company-social-impact.webp" alt="Smiling child receiving a meal" width="120" height="120" /></span>
+                            <span class="avatar"><img loading="lazy" src="Images/Social Impact Making a Difference through Corporate Responsibility/top-web-design-company-social-impact.webp" alt="Volunteers serving food" width="120" height="120" /></span>
+                            <span class="avatar"><img loading="lazy" src="Images/Social Impact Making a Difference through Corporate Responsibility/web-design-agency-social-impact.webp" alt="Workers preparing food in a commercial kitchen" width="120" height="120" /></span>
+                            <span class="avatar"><img loading="lazy" src="Images/Social Impact Making a Difference through Corporate Responsibility/web-design-company-social-impact.webp" alt="Man holding a thank you poster with two children" width="120" height="120" /></span>
+                            <span class="avatar"><img loading="lazy" src="Images/Social Impact Making a Difference through Corporate Responsibility/web-development-company-social-impact.webp" alt="People serving food at a charity event" width="120" height="120" /></span>
+                            <span class="avatar"><img loading="lazy" src="Images/Social Impact Making a Difference through Corporate Responsibility/website-design-company-social-impact.webp" alt="Excited children in a classroom" width="120" height="120" /></span>
                         </div>
                     </div>
                     <p class="text-md-center">In the current business environment, social impact initiatives at Keyideas have become essential elements of our corporate strategy... These efforts extend beyond mere profit-making goals, striving to foster positive change and enhance societal well-being.</p>
@@ -417,10 +437,10 @@
                         <p>At Keyideas, we’re always on the lookout for exceptional software experts and talented professionals...</p>
                     </div>
                     <div class="ki-carrer">
-                        <div class="ki-first-b"><img src="Images/Join Our Team Work with Our Industry-Leading Software Experts/website-design-company-careers.webp" /><img src="Images/Join Our Team Work with Our Industry-Leading Software Experts/top-development-company-careers.webp" /></div>
-                        <div class="ki-second-b"><img src="Images/Join Our Team Work with Our Industry-Leading Software Experts/development-company-job-careers.webp" /></div>
+                        <div class="ki-first-b"><img src="Images/Join Our Team Work with Our Industry-Leading Software Experts/website-design-company-careers.webp" alt="Office gathering with employees and family" width="367" height="208" loading="lazy" /><img src="Images/Join Our Team Work with Our Industry-Leading Software Experts/top-development-company-careers.webp" alt="Team celebrating and cutting a cake" width="367" height="208" loading="lazy" /></div>
+                        <div class="ki-second-b"><img src="Images/Join Our Team Work with Our Industry-Leading Software Experts/development-company-job-careers.webp" alt="The Platina office building" width="753" height="438" loading="lazy" /></div>
                         <div class="ki-third-b">
-                            <img src="Images/Join Our Team Work with Our Industry-Leading Software Experts/design-development-job-openings.webp" />
+                            <img src="Images/Join Our Team Work with Our Industry-Leading Software Experts/design-development-job-openings.webp" alt="Office hallway with a seating area and balloons" width="368" height="353" loading="lazy" />
                             <div class="ki-career-link"><a href="#">Job Openings →</a></div>
                         </div>
                     </div>
@@ -432,9 +452,7 @@
             <div class="container">
                 <div class="faq-main-wrapper">
                     <div class="faq-content">
-                        <div class="faq-heading-box1">
-                            <h2>Comprehensive FAQ About Choosing the Right IT Consulting Company</h2>
-                        </div>
+                        <h2 class="heading2-ele">Comprehensive FAQ About Choosing the Right IT Consulting Company</h2>
                         <div class="accordion-placeholder">FAQS SHORTCODE</div>
                     </div>
                     <div class="faq-review">
@@ -451,10 +469,10 @@
                         <h3 class="footer-heading">About Us</h3>
                         <p>We are a leading IT consulting and software development company, delivering innovative digital solutions since 2007. We empower businesses with user-centric design, custom web and mobile apps, and strategic digital marketing.</p>
                         <div class="footer-social-icons">
-                            <a href="#" title="LinkedIn"><img src="https://placehold.co/24x24/ffffff/4c1d95?text=in" alt="LinkedIn"></a>
-                            <a href="#" title="Facebook"><img src="https://placehold.co/24x24/ffffff/4c1d95?text=f" alt="Facebook"></a>
-                            <a href="#" title="Twitter"><img src="https://placehold.co/24x24/ffffff/4c1d95?text=X" alt="Twitter"></a>
-                            <a href="#" title="Instagram"><img src="https://placehold.co/24x24/ffffff/4c1d95?text=ig" alt="Instagram"></a>
+                            <a href="#" title="LinkedIn"><img src="https://placehold.co/24x24/ffffff/4c1d95?text=in" alt="LinkedIn logo" width="24" height="24"></a>
+                            <a href="#" title="Facebook"><img src="https://placehold.co/24x24/ffffff/4c1d95?text=f" alt="Facebook logo" width="24" height="24"></a>
+                            <a href="#" title="Twitter"><img src="https://placehold.co/24x24/ffffff/4c1d95?text=X" alt="Twitter logo" width="24" height="24"></a>
+                            <a href="#" title="Instagram"><img src="https://placehold.co/24x24/ffffff/4c1d95?text=ig" alt="Instagram logo" width="24" height="24"></a>
                         </div>
                     </div>
             
@@ -504,7 +522,10 @@
         </footer>
     </div>
 
-    <script src="script.js"></script>
+
+<script src="script.js"></script>
 
 </body>
 </html>
+
+
