@@ -1,54 +1,141 @@
 
         document.addEventListener('DOMContentLoaded', function() {
-             // --- Hero Animation Logic ---
-            const awardCells = {
-                cell1: document.getElementById('award-cell-1'), // Row 1, Pos 2
-                cell2: document.getElementById('award-cell-2'), // Row 1, Pos 4
-                cell3: document.getElementById('award-cell-3'), // Row 2, Pos 2
-                cell4: document.getElementById('award-cell-4')  // Row 3, Pos 2
-            };
+            // Get the container for the dynamic grid
+            const heroGrid = document.getElementById('heroGrid');
 
-            const awardSets = [
-                { // Set 1: Based on "Clutch/Goodfirms" image
-                    cell1: `<img src="Images/Clutch.webp" alt="Clutch Logo" width="80" height="22"><span class="award-title">Top B2B</span><span class="award-description">Providers in the Indian Emerging Tech Market for 2021</span>`,
-                    cell2: `<img src="Images/GoodFirms.webp" alt="GoodFirms Logo" width="80" height="22"><span class="award-title">Top Shopify</span><span class="award-description">Development Companies in 2019</span>`,
-                    cell3: `<img src="Images/Microsoft Solution Partner.webp" alt="Microsoft Logo" width="80" height="22"><span class="award-title">Solutions Partner</span><span class="award-description">Microsoft Cloud</span>`,
-                    cell4: `<img src="Images/Clutch.webp" alt="Clutch Logo" width="80" height="22"><span class="award-title">Top 12</span><span class="award-description">out of 400 top Mobile App Developers in India, 2020</span>`
-                },
-                { // Set 2: Based on "CrowdReviews" image
-                    cell1: `<img src="Images/Clutch.webp" alt="CrowdReviews Logo" width="80" height="22"><span class="award-title">#1 ASP.NET</span><span class="award-description">Development Company</span>`,
-                    cell2: `<img src="Images/Clutch.webp" alt="CrowdReviews Logo" width="80" height="22"><span class="award-title">Top 10</span><span class="award-description">Web Development Company</span>`,
-                    cell3: `<img src="Images/Microsoft Solution Partner.webp" alt="CrowdReviews Logo" width="80" height="22"><span class="award-title">Top 3</span><span class="award-description">E-Commerce Development Company</span>`,
-                    cell4: `<img src="Images/Clutch.webp" alt="Clutch Logo" width="80" height="22"><span class="award-title">Top 1000</span><span class="award-description">B2B Companies 2018</span>`
-                }
+            // Define the HTML content for each phase of the animation
+            const animationPhases = [
+                // Phase 1 (Based on image_273d36.png) - Corrected colors for static blocks
+                `
+                <div class="grid-row">
+                    <div class="grid-square" style="background-color: #7646D7;">Transform</div>
+                    <div class="grid-square award-cell">
+                        <img src="Images/Clutch.webp" alt="CrowdReviews Logo" width="80" height="22"><span class="award-title">#1 ASP.NET</span><span class="award-description">Development Company</span>
+                    </div>
+                    <div class="grid-square" style="background-color: #CFA9FF;">Convert</div>
+                    <div class="grid-square award-cell">
+                        <img src="Images/Clutch.webp" alt="CrowdReviews Logo" width="80" height="22"><span class="award-title">Top 10</span><span class="award-description">Web Development Company</span>
+                    </div>
+                </div>
+                <div class="grid-row">
+                    <div class="grid-square" style="background-color: #CFA9FF;">Attract</div>
+                    <div class="grid-square award-cell">
+                        <img src="Images/Microsoft Solution Partner.webp" alt="CrowdReviews Logo" width="80" height="22"><span class="award-title">Top 3</span><span class="award-description">E-Commerce Development Company</span>
+                    </div>
+                    <div class="grid-square" style="background-color: #CFA9FF;">Growth</div>
+                </div>
+                <div class="grid-row">
+                    <div class="grid-square" style="background-color: #CFA9FF;">Strategy</div>
+                    <div class="grid-square award-cell">
+                        <img src="Images/Clutch.webp" alt="Clutch Logo" width="80" height="22"><span class="award-title">Top 1000</span><span class="award-description">B2B Companies 2018</span>
+                    </div>
+                </div>
+                `,
+                // Phase 2 (Screenshot 2025-08-11 150517.png) - Adjusted to use inline styles for consistency
+                `
+                <div class="grid-row">
+                    <div class="grid-square" style="background-color: #CFA9FF;">Transform</div>
+                    <div class="grid-square award-cell">
+                        <img src="Images/Clutch.webp" alt="Clutch Logo" width="80" height="22"><span class="award-title">Top B2B</span><span class="award-description">Providers in the Indian Emerging Tech Market for<br>2021</span>
+                    </div>
+                    <div class="grid-square" style="background-color: #CFA9FF;">Convert</div>
+                    <div class="grid-square award-cell">
+                        <img src="Images/GoodFirms.webp" alt="GoodFirms Logo" width="80" height="22"><span class="award-title">Top Shopify</span><span class="award-description">Development Companies in<br>2019</span>
+                    </div>
+                </div>
+                <div class="grid-row">
+                    <div class="grid-square" style="background-color: #CFA9FF;">Attract</div>
+                    <div class="grid-square award-cell cell-microsoft">
+                        <img src="Images/Microsoft Solution Partner.webp" alt="Microsoft Logo" width="80" height="22"><span class="award-title">Solutions Partner</span><span class="award-description">Microsoft Cloud</span>
+                    </div>
+                    <div class="grid-square" style="background-color: #CFA9FF;">Growth</div>
+                </div>
+                <div class="grid-row">
+                    <div class="grid-square" style="background-color: #CFA9FF;">Strategy</div>
+                    <div class="grid-square award-cell">
+                        <img src="Images/Clutch.webp" alt="Clutch Logo" width="80" height="22"><span class="award-title">Top 12</span><span class="award-description">out of 400 top Mobile App Developers in India, 2020</span>
+                    </div>
+                </div>
+                `,
+                // Phase 3 (image_266bc1.png) - Adjusted to use inline styles for consistency
+                `
+                <div class="grid-row">
+                    <div class="grid-square award-cell">
+                        <img src="Images/Clutch.webp" alt="CrowdReviews Logo" width="80" height="22"><span class="award-title">#1 ASP.NET</span><span class="award-description">Development Company</span>
+                    </div>
+                    <div class="grid-square" style="background-color: #CFA9FF;">Transform</div>
+                    <div class="grid-square award-cell cell-microsoft">
+                        <img src="Images/Microsoft Solution Partner.webp" alt="CrowdReviews Logo" width="80" height="22"><span class="award-title">Top 3</span><span class="award-description">E-Commerce Development Company</span>
+                    </div>
+                    <div class="grid-square" style="background-color: #CFA9FF;">Strategy</div>
+                </div>
+                <div class="grid-row">
+                    <div class="grid-square award-cell">
+                        <img src="Images/Clutch.webp" alt="CrowdReviews Logo" width="80" height="22"><span class="award-title">Top 10</span><span class="award-description">Web Development Company</span>
+                    </div>
+                    <div class="grid-square" style="background-color: #CFA9FF;">Attract</div>
+                    <div class="grid-square award-cell">
+                        <img src="Images/Clutch.webp" alt="Clutch Logo" width="80" height="22"><span class="award-title">Top 1000</span><span class="award-description">B2B Companies 2018</span>
+                    </div>
+                </div>
+                <div class="grid-row">
+                    <div class="grid-square" style="background-color: #CFA9FF;">Convert</div>
+                    <div class="grid-square" style="background-color: #CFA9FF;">Growth</div>
+                </div>
+                `,
+                // Phase 4 (image_266bd7.png) - Adjusted to use inline styles for consistency
+                `
+                <div class="grid-row">
+                    <div class="grid-square award-cell">
+                        <img src="Images/Clutch.webp" alt="Clutch Logo" width="80" height="22"><span class="award-title">Top B2B</span><span class="award-description">Providers in the Indian Emerging Tech Market for<br>2021</span>
+                    </div>
+                    <div class="grid-square" style="background-color: #CFA9FF;">Attract</div>
+                    <div class="grid-square award-cell">
+                        <img src="Images/GoodFirms.webp" alt="GoodFirms Logo" width="80" height="22"><span class="award-title">Top Shopify</span><span class="award-description">Development Companies in<br>2019</span>
+                    </div>
+                    <div class="grid-square" style="background-color: #CFA9FF;">Growth</div>
+                </div>
+                <div class="grid-row">
+                    <div class="grid-square" style="background-color: #CFA9FF;">Transform</div>
+                    <div class="grid-square" style="background-color: #CFA9FF;">Convert</div>
+                    <div class="grid-square award-cell">
+                        <img src="Images/Clutch.webp" alt="Clutch Logo" width="80" height="22"><span class="award-title">Top 12</span><span class="award-description">out of 400 top Mobile App Developers in India, 2020</span>
+                    </div>
+                </div>
+                <div class="grid-row">
+                    <div class="grid-square award-cell cell-microsoft">
+                        <img src="Images/Microsoft Solution Partner.webp" alt="Microsoft Logo" width="80" height="22"><span class="award-title">Solutions Partner</span><span class="award-description">Microsoft Cloud</span>
+                    </div>
+                    <div class="grid-square" style="background-color: #CFA9FF;">Strategy</div>
+                </div>
+                `
             ];
             
-            let currentAwardSetIndex = 0;
+            let currentPhaseIndex = 0;
 
-            function updateAwards() {
-                const cells = Object.values(awardCells);
-                if (!cells.every(cell => cell)) return; 
+            function updateHeroGrid() {
+                if (!heroGrid) return; // Exit if grid element is not found
 
-                // Fade out
-                cells.forEach(cell => cell.style.opacity = '0');
+                // Fade out the current grid content
+                heroGrid.style.opacity = '0';
 
-                // Wait for fade out, then update content and fade in
                 setTimeout(() => {
-                    const currentSet = awardSets[currentAwardSetIndex];
-                    awardCells.cell1.innerHTML = currentSet.cell1;
-                    awardCells.cell2.innerHTML = currentSet.cell2;
-                    awardCells.cell3.innerHTML = currentSet.cell3;
-                    awardCells.cell4.innerHTML = currentSet.cell4;
+                    // Update the grid with the HTML of the current phase
+                    heroGrid.innerHTML = animationPhases[currentPhaseIndex];
                     
-                    cells.forEach(cell => cell.style.opacity = '1');
+                    // Fade in the new grid content
+                    heroGrid.style.opacity = '1';
                     
-                    currentAwardSetIndex = (currentAwardSetIndex + 1) % awardSets.length;
-                }, 400); 
+                    // Move to the next phase, loop back to start if at the end
+                    currentPhaseIndex = (currentPhaseIndex + 1) % animationPhases.length;
+                }, 400); // This timeout should match the CSS transition duration
             }
 
-            if (Object.values(awardCells).every(cell => cell)) {
-                updateAwards(); 
-                setInterval(updateAwards, 5000); 
+            // Start the animation
+            if (heroGrid) {
+                updateHeroGrid(); // Initial load
+                // Changed interval to 2000 milliseconds (2 seconds)
+                setInterval(updateHeroGrid, 2500); 
             }
 
             // --- Mobile Menu Toggle ---
@@ -172,4 +259,3 @@
                 displayLogos(expertiseBtns[0].textContent.trim());
             }
         });
-   

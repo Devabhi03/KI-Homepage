@@ -6,12 +6,11 @@
             --primary-light: #ede9fe;
             --dark-color: #1f2937;
             --text-color: #4b5563;
-            --light-gray: #f9fafb;
             --border-color: #e5e7eb;
             --white: #ffffff;
             --purple-bg: #4f149a; /* Main background purple from image */
             --purple-cell-bg: #5920a4;
-            --purple-cell-light: #6a2eab;
+            --purple-cell-light: #6a2eab; /* This is the original light purple for static-cell */
         }
 
         * { box-sizing: border-box; margin: 0; padding: 0; }
@@ -26,6 +25,7 @@
         .container { max-width: 1200px; margin: 0 auto; padding: 0 20px; }
         section { padding: 60px 0; }
         h1, h2, .heading2-ele {
+            font-family: 'Oswald', sans-serif;
             color: var(--dark-color);
             margin-bottom: 20px;
             font-weight: 700;
@@ -45,11 +45,11 @@
         .main__header { background: var(--white); padding: 10px 0; border-bottom: 1px solid var(--border-color); position: sticky; top: 0; z-index: 1000; }
         .navbar { display: flex; justify-content: space-between; align-items: center; }
         .navbar-brand img { height: 50px; width: auto; }
-        .navbar-nav { list-style: none; display: flex; align-items: center; gap: 30px; }
+        .navbar-nav { list-style: none; display: flex; gap: 30px; }
         .navbar-nav a { color: var(--text-color); font-weight: 500; transition: color 0.3s; }
         .navbar-nav a:hover { color: var(--primary-color); }
-        .lets-talk-btn { background-color: var(--primary-color); color: var(--white); padding: 16px 32px; border-radius: 8px; font-weight: 500; transition: background-color 0.3s; }
-        .lets-talk-btn:hover { background-color: var(--primary-dark); color: var(--white); }
+        .lets-talk-btn { background-color: var(--primary-color); color: var(--white); padding: 10px 25px; border-radius: 8px; font-weight: 500; transition: background-color 0.3s; }
+        .lets-talk-btn:hover { background-color: var(--primary-dark); }
         
         /* -- Responsive Header Styles -- */
         .navbar-toggler {
@@ -126,6 +126,7 @@
             align-items: flex-end; /* Align rows to the right */
             gap: 3px;
             padding: 3px;
+            transition: opacity 0.4s ease-in-out; /* Add transition for fade effect */
         }
         .grid-row {
             display: flex;
@@ -142,8 +143,7 @@
             text-align: center;
             font-weight: 500;
             font-size: 1.1rem;
-            transition: opacity 0.4s ease-in-out;
-            background-color: var(--purple-cell-bg);
+            background-color: var(--purple-cell-bg); /* Default dark purple */
             color: var(--white);
             border-radius: 8px;
         }
@@ -152,7 +152,8 @@
         .award-cell .award-title { font-weight: 700; font-size: 1rem; display: block; }
         .award-cell .award-description { font-size: 0.85rem; line-height: 1.4; opacity: 0.9; font-weight: 400; }
         
-        .static-cell { background-color: var(--purple-cell-light); }
+        /* The static-cell class is now less critical as inline styles are used for specific colors */
+        .static-cell { background-color: var(--purple-cell-light); } 
         .cell-microsoft { background-color: var(--white); color: #5e5e5e; }
         .cell-microsoft img { height: 30px; margin-bottom: 8px; filter: none;}
         
@@ -184,6 +185,8 @@
             overflow: hidden; 
             height: 350px; 
             color: var(--white); 
+            display: flex;
+            align-items: flex-start; /* Aligns text to the top */
             background-color: var(--dark-color);
         }
         .work-block-container::before { /* Gradient Overlay */
@@ -206,9 +209,7 @@
             z-index: 0;
         }
         .work-block-text {
-            position: absolute;
-            top: 0;
-            left: 0;
+            position: relative;
             z-index: 2;
             padding: 20px;
         }
@@ -228,14 +229,56 @@
         .sc-link-box a { display: flex; align-items: center; gap: 15px; color: var(--text-color); font-weight: 500; text-align: left; height: 100%; }
         .sc-link-box img { border-radius: 8px; height: 50px; width: 50px; object-fit: cover; flex-shrink: 0; }
 
-        /* --- Standout Box --- */
-        .ki-why-we-standout-section-new { background: var(--primary-color); color: var(--white); border-radius: 12px; padding: 20px; grid-column: 1 / -1; display: flex; align-items: center; justify-content: space-between; gap: 20px; flex-wrap: wrap; }
-        .ki-wwso-first-new { font-weight: 700; font-size: 1.5rem; flex-shrink: 0; line-height: 1.2; }
-        .ki-wwso-features { display: flex; gap: 15px; width: 100%; flex-grow: 1; }
-        .feature-item { display: flex; align-items: center; gap: 10px; background: var(--primary-dark); padding: 10px; border-radius: 8px; flex: 1; }
-        .feature-item svg { width: 24px; height: 24px; stroke-width: 1.5; flex-shrink: 0; }
-        .feature-item h4 { margin: 0; font-size: 1rem; font-weight: 600; }
-        .feature-item p { font-size: 0.8rem; line-height: 1.3; opacity: 0.8; margin: 0; }
+        /* --- Standout Box (Adjustable) --- */
+        .ki-why-we-standout-section-new {
+            background: var(--primary-color);
+            color: var(--white);
+            border-radius: 12px;
+            padding: 20px;
+            grid-column: 1 / -1; /* Default to full width */
+            display: flex;
+            flex-direction: column; /* Mobile: Stack title and features */
+            gap: 20px;
+        }
+        .ki-wwso-first-new {
+            font-family: 'Oswald', sans-serif;
+            font-weight: 700;
+            font-size: 1.5rem;
+            line-height: 1.2;
+            text-align: center; /* Mobile: Center the title */
+            flex-shrink: 0;
+        }
+        .ki-wwso-features {
+            display: flex;
+            flex-direction: column; /* Mobile: Stack feature items */
+            gap: 10px; /* Vertical gap */
+            width: 100%;
+        }
+        .feature-item {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            background: var(--primary-dark);
+            padding: 15px 10px; /* More vertical padding for better look when stacked */
+            border-radius: 8px;
+        }
+        .feature-item svg {
+            width: 24px;
+            height: 24px;
+            stroke-width: 1.5;
+            flex-shrink: 0;
+        }
+        .feature-item h4 {
+            margin: 0;
+            font-size: 1rem;
+            font-weight: 600;
+        }
+        .feature-item p {
+            font-size: 0.8rem;
+            line-height: 1.3;
+            opacity: 0.8;
+            margin: 0;
+        }
         
         /* --- Wide Range of Expertise Section --- */
         .expertise-wrapper { display: flex; flex-wrap: wrap; justify-content: center; gap: 15px; }
@@ -257,13 +300,13 @@
         }
 
         .expertise-logos-grid {
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: center;
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
             gap: 60px;
             margin-top: 60px;
             padding: 0 20px;
             align-items: center;
+            justify-items: center;
         }
         .expertise-logos-grid img {
             max-width: 180px;
@@ -334,6 +377,23 @@
             .ki-carrer { grid-template-columns: 2fr 3fr 2fr; }
             .faq-main-wrapper { flex-direction: row; }
             .footer-bottom { flex-direction: row; justify-content: space-between; }
+
+            /* --- Standout Box Adjustments for Tablets+ --- */
+            .ki-why-we-standout-section-new {
+                flex-direction: row; /* Tablet/Desktop: Side-by-side layout */
+                align-items: center;
+            }
+            .ki-wwso-first-new {
+                text-align: left; /* Revert text alignment */
+            }
+            .ki-wwso-features {
+                flex-direction: row; /* Items side-by-side */
+                gap: 15px; /* Horizontal gap */
+                flex-grow: 1; /* Allow features to take up remaining space */
+            }
+            .feature-item {
+                flex: 1; /* Allow items to share space equally */
+            }
         }
         @media (min-width: 992px) { 
             .scservice-wrapper { flex-direction: row; }
@@ -341,49 +401,54 @@
         }
         @media (min-width: 1024px) {
             .sc-box-wrapper { grid-template-columns: repeat(4, 1fr); }
-            .ki-why-we-standout-section-new { grid-column: 1 / span 3; flex-wrap: nowrap; }
+            .ki-why-we-standout-section-new { grid-column: 1 / span 3; }
             .process-flow { grid-template-columns: repeat(3, 1fr); }
         }
 
         /* --- MOBILE RESPONSIVE STYLES --- */
         @media (max-width: 767px) {
-            .navbar-toggler {
-                display: block;
-            }
-            .header_menu {
-                display: none;
-                position: fixed;
-                top: 72px; /* Adjust based on header height */
-                left: 0;
-                width: 100%;
-                height: calc(100% - 72px);
-                background-color: var(--white);
-                flex-direction: column;
-                justify-content: center;
-                align-items: center;
-            }
-            .header_menu.active {
-                display: flex;
-            }
-            .navbar-nav {
-                flex-direction: column;
-                gap: 40px;
-            }
-            .navbar-nav .lets-talk-btn {
-                padding: 10px 25px; /* Smaller padding for mobile menu */
-            }
-
-            .ki-why-we-standout-section-new {
-                align-items: flex-start;
-                flex-direction: column;
-            }
-            .ki-wwso-features {
-                flex-direction: column;
-                width: 100%;
-            }
-
             h2, .heading2-ele { font-size: 1.8rem; }
             
+            /* --- CORRECTED & ADDED MOBILE HEADER STYLES --- */
+            .navbar-toggler { display: block; }
+            .lets-talk-btn.desktop-only { display: none; }
+            
+            .header_menu {
+                display: none; /* Hide by default */
+                position: absolute;
+                top: 71px; /* Height of header (50px logo + 20px padding + 1px border) */
+                left: 0;
+                width: 100%;
+                background-color: var(--white);
+                border-top: 1px solid var(--border-color);
+                box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+            }
+            
+            .header_menu.active {
+                display: block; /* Show when active */
+            }
+            
+            .navbar-nav {
+                flex-direction: column;
+                gap: 0;
+            }
+            
+            .navbar-nav li {
+                width: 100%;
+                text-align: center;
+            }
+
+            .navbar-nav a {
+                padding: 15px;
+                display: block;
+                border-bottom: 1px solid var(--border-color);
+            }
+            .navbar-nav li:last-child a {
+                border-bottom: none;
+            }
+             /* --- END OF CORRECTIONS --- */
+
+
             .ki-home-banner-background {
                 flex-direction: column;
                 height: auto;
