@@ -24,8 +24,9 @@
 
         .container { max-width: 1200px; margin: 0 auto; padding: 0 20px; }
         section { padding: 60px 0; }
+        
+        /* MODIFICATION: Removed font-family: 'Oswald' to let headings inherit 'Poppins' */
         h1, h2, .heading2-ele {
-            font-family: 'Oswald', sans-serif;
             color: var(--dark-color);
             margin-bottom: 20px;
             font-weight: 700;
@@ -240,8 +241,8 @@
             flex-direction: column; /* Mobile: Stack title and features */
             gap: 20px;
         }
+        /* MODIFICATION: Removed font-family: 'Oswald' to let this element inherit 'Poppins' */
         .ki-wwso-first-new {
-            font-family: 'Oswald', sans-serif;
             font-weight: 700;
             font-size: 1.5rem;
             line-height: 1.2;
