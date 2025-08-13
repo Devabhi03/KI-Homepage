@@ -197,7 +197,7 @@
         .ki-home-since { padding: 40px 0; }
         .ki-home-since span { font-size: 12rem; font-weight: 800; color: rgba(0,0,0,0.05); }
 
-        /* START: UPDATED LEADING SECTORS STYLES */
+        /* START: LEADING SECTORS STYLES */
        .sc-box-wrapper {
            display: grid;
            grid-template-columns: repeat(4, 1fr);
@@ -232,59 +232,69 @@
            object-fit: contain;
            margin-bottom: 10px;
        }
-
-       /* ✅ MODIFIED: Changed grid-column to span 3 */
+       
+       /* ✅ MODIFIED: Why We Stand Out Section */
        .standout-grid-item {
-           grid-column: span 3; /* Make "Why We Stand Out?" span three columns */
+           grid-column: span 3;
            background: var(--primary-dark);
            color: var(--white);
            border-radius: 12px;
            padding: 30px;
            display: flex;
-           flex-direction: column;
+           flex-direction: row;
            align-items: center;
-           justify-content: center;
-           gap: 20px;
-           text-align: center;
+           justify-content: space-between;
+           gap: 30px;
        }
 
        .standout-grid-item .standout-title {
-           font-size: 1.5rem;
+           font-size: 1.8rem;
            font-weight: 700;
            text-transform: uppercase;
            margin: 0;
            padding: 0;
-           line-height: 1.2;
+           line-height: 1.1;
+           flex-shrink: 0;
+           text-align: left;
        }
+
        .standout-grid-item .standout-features {
            display: flex;
            justify-content: space-around;
-           width: 100%;
-           gap: 15px;
+           flex-grow: 1;
+           gap: 20px;
        }
+
        .standout-grid-item .feature-item {
            display: flex;
+           flex-direction: column;
            align-items: center;
-           gap: 10px;
+           text-align: center;
+           gap: 8px;
        }
+
        .standout-grid-item .feature-item svg {
-           width: 24px;
-           height: 24px;
-           stroke-width: 2;
+           width: 32px;
+           height: 32px;
+           stroke-width: 1.5;
            flex-shrink: 0;
+           margin-bottom: 5px;
        }
        .standout-grid-item .feature-item div h4 {
-           font-size: 1.1rem;
+           font-size: 1.2rem;
+           font-weight: 700;
            margin: 0 0 4px 0;
-           text-align: left;
+           text-align: center;
        }
        .standout-grid-item .feature-item div p {
-           font-size: 0.85rem;
+           font-size: 0.9rem;
            line-height: 1.3;
            opacity: 0.8;
            margin: 0;
-           text-align: left;
+           text-align: center;
        }
+       /* END MODIFICATIONS */
+
        .show-more-btn {
            display: none;
            align-items: center;
@@ -452,6 +462,8 @@
             }
             .standout-grid-item {
                 grid-column: span 2;
+                flex-direction: column; /* Revert to column for mobile */
+                text-align: center;
             }
             .standout-grid-item .standout-features {
                 flex-direction: column;
