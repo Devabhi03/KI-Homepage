@@ -1,4 +1,4 @@
- 
+
         /* --- General Setup & Variables --- */
         :root {
             --primary-color: #6d28d9;
@@ -231,42 +231,42 @@
 
         /* START: LEADING SECTORS STYLES */
        .sc-box-wrapper {
-         display: grid;
-         grid-template-columns: repeat(4, 1fr);
-         gap: var(--space-m);
-         align-items: start;
+          display: grid;
+          grid-template-columns: repeat(4, 1fr);
+          gap: var(--space-m);
+          align-items: start;
        }
        .sc-link-box {
-         background: var(--white);
-         border-radius: 12px;
-         padding: 15px;
-         box-shadow: 0 4px 15px rgba(0,0,0,0.05);
-         transition: box-shadow 0.3s, transform 0.3s;
-         display: flex;
-         height: 100%;
+          background: var(--white);
+          border-radius: 12px;
+          padding: 15px;
+          box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+          transition: box-shadow 0.3s, transform 0.3s;
+          display: flex;
+          height: 100%;
        }
        .sc-link-box:hover {
-         box-shadow: 0 8px 25px rgba(0,0,0,0.1);
-         transform: translateY(-5px);
+          box-shadow: 0 8px 25px rgba(0,0,0,0.1);
+          transform: translateY(-5px);
        }
        .sc-link-box a {
-         display: flex;
-         flex-direction: row;
-         align-items: center;
-         justify-content: flex-start;
-         gap: var(--space-m);
-         color: #4F149A;
-         text-decoration: none;
-         width: 100%;
-         font-weight: 600;
-         font-size: 16px;
+          display: flex;
+          flex-direction: row;
+          align-items: center;
+          justify-content: flex-start;
+          gap: var(--space-m);
+          color: #4F149A;
+          text-decoration: none;
+          width: 100%;
+          font-weight: 600;
+          font-size: 16px;
        }
        .sc-link-box img {
-         width: 60px;
-         height: 60px;
-         object-fit: cover;
-         border-radius: 8px;
-         flex-shrink: 0;
+          width: 60px;
+          height: 60px;
+          object-fit: cover;
+          border-radius: 8px;
+          flex-shrink: 0;
        }
 
         .standout-grid-item {
@@ -334,23 +334,23 @@
         .standout-desc-desktop { display: block; }
 
        .show-more-btn {
-         display: none;
-         align-items: center;
-         justify-content: center;
-         font-size: 18px;
-         font-weight: 600;
-         cursor: pointer;
-         background-color: var(--primary-light);
-         color: var(--text-color);
-         border: 1px solid var(--border-color);
-         border-radius: 12px;
-         padding: 15px;
-         text-align: center;
-         transition: background-color 0.3s;
-         margin-top: var(--space-m);
+          display: none;
+          align-items: center;
+          justify-content: center;
+          font-size: 18px;
+          font-weight: 600;
+          cursor: pointer;
+          background-color: var(--primary-light);
+          color: var(--text-color);
+          border: 1px solid var(--border-color);
+          border-radius: 12px;
+          padding: 15px;
+          text-align: center;
+          transition: background-color 0.3s;
+          margin-top: var(--space-m);
        }
        .show-more-btn:hover {
-         background-color: #e9e5ff;
+          background-color: #e9e5ff;
        }
         @media (max-width: 1200px) {
             .sc-box-wrapper {
@@ -646,11 +646,49 @@
             .process-flow { grid-template-columns: repeat(3, 1fr); }
         }
 
-        @media (max-width: 991px) { /* Tablet Styles */
+        @media (max-width: 991px) { /* General Tablet Styles */
             .sc-box-wrapper {
                 grid-template-columns: repeat(3, 1fr);
             }
         }
+
+        /* --- START: NEW TABLET VIEW (iPad Mini/Air) --- */
+        @media (min-width: 768px) and (max-width: 1023px) {
+            /* HERO SECTION: Mix of Desktop Grid and Mobile Heading */
+
+            /* 1. Use Desktop-style Grid */
+            .ki-home-banner-animation {
+                transform: none; /* Remove mobile scaling */
+                position: absolute;
+                top: 0;
+                right: 0;
+            }
+            .grid-square {
+                width: 150px; /* Desktop size */
+                height: 150px; /* Desktop size */
+                font-size: 26px; /* Desktop size */
+            }
+            .award-cell img {
+                height: 24px; /* Desktop size */
+            }
+            .award-cell .award-title {
+                font-size: 1rem; /* Desktop size */
+            }
+            .award-cell .award-description {
+                display: block; /* Ensure description is visible like on desktop */
+            }
+            .cell-microsoft img {
+                height: 30px; /* Desktop size */
+            }
+
+            /* 2. Use Mobile-style Heading Size */
+            .ki-home-banner-text h1 {
+                font-size: 32px; /* Smaller font size, similar to mobile */
+                line-height: 1.3;
+            }
+        }
+        /* --- END: NEW TABLET VIEW --- */
+
 
         /* --- MOBILE RESPONSIVE STYLES --- */
         @media (max-width: 767px) {
@@ -893,4 +931,3 @@
                 margin-top: 1rem;
             }
         }
-    
