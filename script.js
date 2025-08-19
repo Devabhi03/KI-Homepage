@@ -1,4 +1,4 @@
-
+ 
         document.addEventListener('DOMContentLoaded', function() {
             const heroGrid = document.getElementById('heroGrid');
             const animationPhases = [
@@ -101,26 +101,22 @@
             const serviceWrapper = document.querySelector('.scservice-wrapper');
             const serviceTabsContainer = document.querySelector('.sc-services-tabs');
 
-            // This function handles the logic for both desktop and mobile
             function handleTabClick(tab, index) {
                 if (window.innerWidth <= 767) {
-                    // Mobile accordion logic
                     const isActive = tab.classList.contains('active');
-                    const currentPanel = tab.nextElementSibling;
-
-                    // Close all tabs and panels
+                    const currentPanel = panels[index]; // Find panel by index
                     tabs.forEach(t => t.classList.remove('active'));
                     panels.forEach(p => p.classList.remove('active'));
                     
-                    // If the clicked tab wasn't already active, open it and its corresponding panel
                     if (!isActive) {
                         tab.classList.add('active');
-                        if (currentPanel && currentPanel.classList.contains('services-sc')) {
+                        if (currentPanel) {
+                             // Move panel right after its tab
+                            tab.after(currentPanel);
                             currentPanel.classList.add('active');
                         }
                     }
                 } else {
-                    // Desktop tab logic
                     tabs.forEach(t => t.classList.remove('active'));
                     panels.forEach(p => p.classList.remove('active'));
 
@@ -129,30 +125,30 @@
                 }
             }
             
-            // This function sets up the initial state and rearranges elements for mobile
             function setupTabs() {
                 if (window.innerWidth <= 767) {
-                    // In mobile view, move each panel right after its corresponding tab
-                    tabs.forEach((tab, index) => {
-                        tab.after(panels[index]);
+                    // On mobile, JavaScript will move the active panel into position
+                    // Deactivate all but the first one initially
+                    panels.forEach((panel, index) => {
+                        if(index > 0) panel.classList.remove('active');
+                    });
+                     tabs.forEach((tab, index) => {
+                        if(index > 0) tab.classList.remove('active');
                     });
                 } else {
-                     // In desktop view, ensure all panels are back inside the main wrapper, after the tabs container
+                     // On desktop, move all panels back to the main wrapper
                      panels.forEach(panel => {
-                         serviceWrapper.appendChild(panel);
+                          serviceWrapper.appendChild(panel);
                      });
                 }
             }
 
-            // Initial setup on page load
             setupTabs();
             
-            // Add click listeners to all tabs
             tabs.forEach((tab, index) => {
                 tab.addEventListener('click', () => handleTabClick(tab, index));
             });
 
-            // Re-run setup on window resize to switch between desktop and mobile layouts
             window.addEventListener('resize', setupTabs);
 
 
@@ -204,4 +200,34 @@
                     industryWrapper.classList.add('show-all');
                 });
             }
+            
+            // START: ACCORDION JAVASCRIPT
+            const accordionHeaders = document.querySelectorAll('.accordion-header');
+            
+            accordionHeaders.forEach(header => {
+                header.addEventListener('click', event => {
+                    const accordionItem = header.parentElement;
+                    const currentlyActiveItem = document.querySelector('.accordion-item.active');
+                    
+                    if(currentlyActiveItem && currentlyActiveItem !== accordionItem) {
+                        currentlyActiveItem.classList.remove('active');
+                        currentlyActiveItem.querySelector('.accordion-header').setAttribute('aria-expanded', 'false');
+                        currentlyActiveItem.querySelector('.accordion-content').style.maxHeight = 0;
+                    }
+
+                    accordionItem.classList.toggle('active');
+                    const content = header.nextElementSibling;
+                    const isExpanded = header.getAttribute('aria-expanded') === 'true';
+
+                    if (!isExpanded) {
+                        header.setAttribute('aria-expanded', 'true');
+                        content.style.maxHeight = content.scrollHeight + 'px';
+                    } else {
+                        header.setAttribute('aria-expanded', 'false');
+                        content.style.maxHeight = 0;
+                    }
+                });
+            });
+            // END: ACCORDION JAVASCRIPT
+
         });
